@@ -1,0 +1,67 @@
+{
+	"udacity-college-algebra-630": {
+		"overview": "Math is everywhere. In this class, you\u2019ll gain an in-depth understanding of algebraic principles, many of which you may have seen before, and learn how to use them to solve problems that we encounter in everyday life. The online version of College Algebra will cover all of the topics that you would see in more traditional class formats, but it will present the material in a way that we hope you\u2019ll find fresh and interesting. You will learn about functions, polynomials, graphing, complex numbers, exponential and logarithmic equations, and much more, all through exploring real-world scenarios.\n\n\nWhy Take This Course?\nIn this course, you will learn...\nTo translate word problems into mathematical expressions or equations\nTo manipulate algebraic expressions and solve equations\nTo graph different types of functions and to understand the relationship between a function\u2019s graph and its equation\nTo model growth and decay",
+		"name": "College Algebra",
+		"school": "San Jose State University",
+		"provider": "Udacity",
+		"link": "http://www.anrdoezrs.net/click-9195917-13826076?url=https%3A%2F%2Fwww.udacity.com%2Fcourse%2Fcollege-algebra--ma008%3Fcoupon%3DAFFIL2H2019",
+		"categories": "Found in Algebra & Geometry",
+		"subject": "maths",
+		"sub-categories": "Algebra & Geometry",
+		"rating": "",
+		"syllabus": "The following topics will be covered. There will be two midterms and one final exam. There are no deadlines unless you are in the SJSU Plus-Udacity for-credit program.\nLesson 1: Number\n\nLesson 2: Expressions\n\nLesson 3: Polynomials\n\nLesson 4: Equations\n\nLesson 5-1: Coordinates\n\nLesson 5-2: Distance\n\nLesson 5-3: Midpoints And Slope\n\nLesson 6-1: Slope And Equations\n\nLesson 6-2: Points\n\nLesson 7: Forms of the Equation of a Line\n\nLesson 8: Inequalities And Absolute Value\n\nLesson 9: More Inequalities And Equations\n\nLesson 10: Parabolas\n\nLesson 11: Factoring\n\nLesson 12: Quadratic and Rational Inequalities\n\nLesson 13: More Parabolas\n\nLesson 14: Completing the Square\n\nLesson 15: Quadratic Formula\n\nLesson 16: Complex Numbers\n\nLesson 17: Functions\n\nLesson 18: Domain and Range\n\nLesson 19: Behavior of Functions\n\nLesson 20: Factor Theorem\n\nLesson 21: Rational Zero Test\n\nLesson 22: Intermediate Value Theorem\n\nLesson 24: Asymptotes\n\nLesson 25: Slant Asymptotes\n\nLesson 26: Transformations\n\nLesson 29: Exponential Functions\n\nLesson 30: Scientific Notation\n\nLesson 31: Logarithmic Functions\n\nLesson 32: Log Properties\n\nLesson 33: Solving Exponential and Logarithmic Equations\n\nLesson 34: Population, Scrolls and Sound",
+		"teacher": "Julie Sliva Spitzer and Miriam Swords Kalk",
+		"details": {
+			"PROVIDER": "Udacity",
+			"COST": "Free Online Course",
+			"SESSION": "Self Paced",
+			"LANGUAGE": "English",
+			"START DATE": ["Self paced"],
+			"DURATION": "16 weeks long"
+		}
+	},
+	"stanford-openedx-how-to-learn-math-for-students-917": {
+		"overview": "How to Learn Math is a class for learners of all levels of mathematics. It combines really important information on the brain and learning with new evidence on the best ways to approach and learn math effectively. Many people have had negative experiences with math, and end up disliking math or failing. This class will give learners of math the information they need to become powerful math learners, it will correct any misconceptions they have about what math is, and it will teach them about their own potential to succeed and the strategies needed to approach math effectively. If you have had past negative experiences with math this will help change your relationship to one that is positive and powerful.\nThe course will feature Jo and a team of undergraduates, as well as videos of math in action - in dance, juggling, snowflakes, soccer and many other applications. It is designed with a pedagogy of active engagement. ",
+		"name": "How to Learn Math: For Students",
+		"school": "Stanford University",
+		"provider": "Stanford OpenEdx",
+		"link": "https://online.stanford.edu/courses/gse-yeduc115-s-how-learn-math-students",
+		"categories": "Found in Mathematics",
+		"subject": "maths",
+		"sub-categories": "Mathematics",
+		"rating": "",
+		"syllabus": "Part 1: The Brain and Math Learning.\nKnocking Down the Myths About Math.\nEveryone can learn math well. There is no such thing as a \u201cmath person\u201d. This session give stunning new evidence on brain growth, and consider what it means for math learners.\n\nMath and Mindset\nWhen individuals change their mindset from fixed to growth their learning potential increases drastically. In this session participants will be encouraged to develop a growth mindset for math.\n\nMistakes and Speed\nRecent brain evidence shows the value of students working on challenging work and even making mistakes. But many students are afraid of mistakes and think it means they are not a math person. This session will encourage students to think positively about mistakes. It will also help debunk myths about math and speed.",
+		"teacher": "Jo Boaler",
+		"details": {
+			"PROVIDER": "Stanford OpenEdx",
+			"COST": "Free Online Course",
+			"SESSION": "Self Paced",
+			"LANGUAGE": "English",
+			"START DATE": ["Self paced", "14th Jul, 2013"],
+			"DURATION": "25 weeks long"
+		}
+	},
+	"edx-queuing-theory-from-markov-chains-to-multi-server-systems-10079": {
+		"overview": "Situations where resources are shared among users appear in a wide variety of domains, from lines at stores and toll booths to queues in telecommunication networks. The management of these shared resources can have direct consequences on users, whether it be waiting times or blocking probabilities. \n\nIn this course, you'll learn how to describe a queuing system statistically, how to model the random evolution of queue lengths over time and calculate key performance indicators, such as an average delay or a loss probability. \n\nThis course is aimed at engineers, students and teachers interested in network planning. \n\nPractical coursework will be carried out using ipython notebooks on a Jupyterhub server which you will be given access to.\n\nStudent testimonial\n\"Great MOOC ! The videos, which are relatively short, provide a good recap on Markov chains and how they apply to queues. The quizzes work well to check if you've understood.\" Lo\u00efc, beta-tester\n\n\"The best MOOC on edX! I'm finishing week 2 and I've never seen that much care put in a course lab! And I love these little gotchas you put into quizzes here and there! Thank you!\" rka444, learner from Session 1, February - March 2018",
+		"name": "Queuing Theory: from Markov Chains to Multi-Server Systems",
+		"school": "Institut Mines-T\u00e9l\u00e9com",
+		"provider": "edX",
+		"link": "http://www.awin1.com/awclick.php?gid=295463&mid=6798&awinaffid=301045&linkid=599979&p=https%3A%2F%2Fwww.edx.org%2Fcourse%2Fqueuing-theory-from-markov-chains-to-multi-server-systems-2&clickref=gtc_direct",
+		"categories": "Found in Mathematics",
+		"subject": "maths",
+		"sub-categories": "Mathematics",
+		"rating": "",
+		"syllabus": "This is a five week course :\nWeek 1 is an introduction to queuing theory. We will introduce basic notions such as arrivals and departures. Particular attention will be paid to the Poisson process and to exponential distribution, two important particular cases of arrivals and service times.\nDuring week 2 we will analyze a first simple example of a no-loss queue, the so called M/M/1 queue, and we will compute its average performance metrics.\nWeek 3 will be dedicated to a basic course in discrete time Markov chains. We will learn how they are characterized and how to compute their steady-state distribution.\nThen in week 4 we will move on to continuous time Markov chains. Again we will learn how to characterize them and how to analyze their steady-state distribution. Equipped with these tools we will then analyze the M/M/1 queue.\nIn week 5 we will study multiserver and finite capacity queues and study how to dimension a loss network.\nEach week of the course will include five or six video lectures, a quiz to test your understanding of the main concepts introduced during that week and a lab using python.",
+		"teacher": "Sandrine Vaton, Isabel Amigo, Hind Castel and Patrick Maill\u00e9",
+		"details": {
+			"PROVIDER": "edX",
+			"COST": "Free Online Course (Audit)",
+			"SESSION": "In progress",
+			"LANGUAGE": "English",
+			"CERTIFICATE": "$49 Certificate Available",
+			"EFFORT": "3-4 hours a week",
+			"START DATE": ["30th Sep, 2019", "Self paced", "29th Jan, 2018"],
+			"DURATION": "5 weeks long"
+		}
+	}
+}

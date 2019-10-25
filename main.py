@@ -13,7 +13,7 @@ from pathlib import Path
 href2 = 'https://www.kadenze.com/courses/introduction-to-programming-for-musicians-and-digital-artists/info?utm_campaign=course_catalog&utm_content=course%3D87&utm_medium=referral&utm_source=classcentral'
 href = 'http://click.linksynergy.com/fs-bin/click?id=SAyYsTvLiGQ&subid=&offerid=451430.1&type=10&tmpid=18061&RD_PARM1=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fpractical-machine-learning&u1=gtc_search'
 
-all_subjects = ['cs', 'business', 'humanities', 'data-science', 'personal-development',
+all_subjects = ['cs', 'business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
                 'art-and-design', 'maths', 'health', 'engineering', 'social-sciences', 'science', 'education', ]
 
 
@@ -21,12 +21,13 @@ def saveJson(json_output, filename='courses.json'):
     file_dir = Path(filename).parent.absolute()
     if not os.path.exists(file_dir):
         os.makedirs(file_dir)
-    with open(filename, 'w') as f:
+    with open(filename, 'w', encoding="utf-8") as f:
         json.dump(json_output, f)
 
 
-def scrapeCourse(output, driver, course_id):
+def scrapeCourse(output, driver, course_id, subject):
     course = {}
+
     course['overview'] = driver.find_element_by_xpath(
         '//div[@data-expand-article-target="overview"]').text
     course['name'] = driver.find_element_by_id('course-title').text
@@ -38,17 +39,42 @@ def scrapeCourse(output, driver, course_id):
 
     course['link'] = driver.find_element_by_id(
         'btnProviderCoursePage').get_attribute('href')
+    course['categories'] = driver.find_element_by_xpath(
+        '//div[@class="text-2 margin-top-xsmall margin-bottom-small medium-up-margin-bottom-xxsmall"]').text
+    course['subject'] = subject
+    course['sub-categories'] = course['categories'].replace('Found in ', '')
 
     course['rating'] = driver.find_element_by_xpath(
-        '//span[@class="review-rating hidden text--charcoal"]//span').text
+        '//span[@class="review-rating hidden text--charcoal"]').text
 
     course['syllabus'] = driver.find_element_by_xpath(
         '//div[@data-expand-article-target="syllabus"]').text
 
     course['teacher'] = driver.find_element_by_xpath(
-        '//html/body/div[1]/div[1]/div[3]/div/div[3]/section[1]/div[2]/div[2]/div/div').text
-    course['details'] = driver.find_element_by_xpath(
+        '//div[@class="text-1 margin-top-medium"]//div[@class="col width-100 text-2 medium-up-text-1"]').text
+    details = driver.find_element_by_xpath(
         '//html/body/div[1]/div[1]/div[3]/div/div[2]/div[1]/div/ul').text
+    detail_data = {}
+    details_split = details.split('\n')
+    start = False
+    start_data = []
+    for i in range(len(details_split)):
+        if start:
+            if details_split[i] == 'DURATION':
+                start = False
+                detail_data[details_split[i]] = details_split[i+1]
+                break
+            else:
+                start_data.append(details_split[i])
+                continue
+
+        if i % 2 == 0:
+            if details_split[i] == 'START DATE':
+                start = True
+                detail_data[details_split[i]] = start_data
+            else:
+                detail_data[details_split[i]] = details_split[i+1]
+    course['details'] = detail_data
     output[course_id] = course
     print(course['name'])
 
@@ -80,13 +106,35 @@ def get_subject_course_urls(subject, driver):
     saveJson(course_urls, f'./courses/urls/{subject}_courses.json')
 
 
+def scrape_all_subjects(driver):
+    for subject in all_subjects:
+        get_subject_course_urls(subject, driver)
+
+
+def get_subject_urls(subject):
+    with open(f'courses/urls/{subject}_courses.json') as f:
+        return json.load(f)
+
+
+def get_course_id(url):
+    course_url = url.split('/')
+    return course_url[len(course_url)-1]
+
+
 def main():
     driver = webdriver.Firefox()
     driver.implicitly_wait(200)
-    subjects = ['programming-and-software-development']
 
-    for subject in subjects:
-        get_subject_course_urls(subject, driver)
+    sub = 'cs'
+    arr = get_subject_urls(sub)
+    output = {}
+    for url in arr[4:15]:
+        driver.get(url)
+        course_id = get_course_id(url)
+        scrapeCourse(output, driver, course_id, sub)
+    saveJson(output, f'./courses/data/{sub}_courses.json')
+    # print(output)
+
     # for url in course_urls:
     #     driver.get(url)
     #     course_url = url.split('/')
