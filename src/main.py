@@ -4,17 +4,34 @@ from bs4 import BeautifulSoup
 import selenium.webdriver.support.ui as ui
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import WebDriverException
 import re
 import pandas as pd
 import os
 import json
 from pathlib import Path
 
-href2 = 'https://www.kadenze.com/courses/introduction-to-programming-for-musicians-and-digital-artists/info?utm_campaign=course_catalog&utm_content=course%3D87&utm_medium=referral&utm_source=classcentral'
-href = 'http://click.linksynergy.com/fs-bin/click?id=SAyYsTvLiGQ&subid=&offerid=451430.1&type=10&tmpid=18061&RD_PARM1=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fpractical-machine-learning&u1=gtc_search'
-
 all_subjects = ['cs', 'business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
                 'art-and-design', 'maths', 'health', 'engineering', 'social-sciences', 'science', 'education', ]
+
+
+xpaths_text = {
+    'overview': '//div[@data-expand-article-target="overview"]',
+    'name': '//h1[@id="course-title"]',
+    'school': '//div[@class="classcentral-style"]//p//a[@class="text--charcoal hover-text--underline"]',
+    'provider': '//div[@class="classcentral-style"]//p//a[@class="text--charcoal text--italic hover-text--underline"]',
+    'categories': '//div[@class="text-2 margin-top-xsmall margin-bottom-small medium-up-margin-bottom-xxsmall"]',
+    'rating': '//span[@class="review-rating hidden text--charcoal"]',
+    'syllabus': '//div[@data-expand-article-target="syllabus"]',
+    'teachers': '//div[@class="text-1 margin-top-medium"]//div[@class="col width-100 text-2 medium-up-text-1"]',
+    'details': '//html/body/div[1]/div[1]/div[3]/div/div[2]/div[1]/div/ul',
+
+}
+
+xpaths_other = {
+    'link': '//a[@id="btnProviderCoursePage"]'
+}
 
 
 def saveJson(json_output, filename='courses.json'):
@@ -25,35 +42,15 @@ def saveJson(json_output, filename='courses.json'):
         json.dump(json_output, f)
 
 
-def scrapeCourse(output, driver, course_id, subject):
-    course = {}
+def safe_get_element_by_xpath(driver, xpath, atrName=''):
+    try:
+        return driver.find_element_by_xpath(xpath)
+    except NoSuchElementException:
+        print(f'no atribute({atrName})')
+        return None
 
-    course['overview'] = driver.find_element_by_xpath(
-        '//div[@data-expand-article-target="overview"]').text
-    course['name'] = driver.find_element_by_id('course-title').text
-    course['school'] = driver.find_element_by_xpath(
-        '//div[@class="classcentral-style"]//p//a[@class="text--charcoal hover-text--underline"]').text
 
-    course['provider'] = driver.find_element_by_xpath(
-        '//div[@class="classcentral-style"]//p//a[@class="text--charcoal text--italic hover-text--underline"]').text
-
-    course['link'] = driver.find_element_by_id(
-        'btnProviderCoursePage').get_attribute('href')
-    course['categories'] = driver.find_element_by_xpath(
-        '//div[@class="text-2 margin-top-xsmall margin-bottom-small medium-up-margin-bottom-xxsmall"]').text
-    course['subject'] = subject
-    course['sub-categories'] = course['categories'].replace('Found in ', '')
-
-    course['rating'] = driver.find_element_by_xpath(
-        '//span[@class="review-rating hidden text--charcoal"]').text
-
-    course['syllabus'] = driver.find_element_by_xpath(
-        '//div[@data-expand-article-target="syllabus"]').text
-
-    course['teacher'] = driver.find_element_by_xpath(
-        '//div[@class="text-1 margin-top-medium"]//div[@class="col width-100 text-2 medium-up-text-1"]').text
-    details = driver.find_element_by_xpath(
-        '//html/body/div[1]/div[1]/div[3]/div/div[2]/div[1]/div/ul').text
+def parse_course_details(details):
     detail_data = {}
     details_split = details.split('\n')
     start = False
@@ -74,9 +71,34 @@ def scrapeCourse(output, driver, course_id, subject):
                 detail_data[details_split[i]] = start_data
             else:
                 detail_data[details_split[i]] = details_split[i+1]
-    course['details'] = detail_data
-    output[course_id] = course
+    return detail_data
+
+
+def scrapeCourse(output, driver, subject):
+    course = {}
+    course['subject'] = subject
+    for x in xpaths_text:
+        course[x] = safe_get_element_by_xpath(
+            driver, xpaths_text[x], atrName=x)
+        if course[x] is not None:
+            course[x] = course[x].text
+
+    course['link'] = safe_get_element_by_xpath(
+        driver, xpaths_other['link']).get_attribute('href')
+
+    if course['teachers'] is not None:
+        course['teachers'] = [x.strip()
+                              for x in re.split(',|and |& ', course['teachers'])]
+    else:
+        course['teachers'] = []
+
+    course['categories'] = [x.strip()
+                                for x in course['categories'].replace('Found in ', '').split(',')]
+
+    course['details'] = parse_course_details(course['details'])
+
     print(course['name'])
+    return course
 
 
 def get_subject_course_urls(subject, driver):
@@ -123,15 +145,15 @@ def get_course_id(url):
 
 def main():
     driver = webdriver.Firefox()
-    driver.implicitly_wait(200)
+    driver.implicitly_wait(3)
 
     sub = 'cs'
     arr = get_subject_urls(sub)
     output = {}
-    for url in arr[4:15]:
+    for url in arr[:3]:
         driver.get(url)
         course_id = get_course_id(url)
-        scrapeCourse(output, driver, course_id, sub)
+        output[course_id] = scrapeCourse(output, driver, sub)
     saveJson(output, f'./courses/data/{sub}_courses.json')
     # print(output)
 
