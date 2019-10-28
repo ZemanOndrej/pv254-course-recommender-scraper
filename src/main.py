@@ -21,8 +21,12 @@ def main():
     for url in arr[:3]:
         driver.get(url)
         course_id = get_course_id(url)
-        output[course_id] = cs.scrapeCourse(sub)
-    
+        try:
+            output[course_id] = cs.scrapeCourse(sub)
+        except Exception as e:
+            print(e)
+            driver.quit()
+
     saveJson(output, f'./courses/data/{sub}_courses.json')
     driver.quit()
 

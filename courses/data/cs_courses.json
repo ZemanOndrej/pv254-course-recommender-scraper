@@ -10,7 +10,6 @@
 			"Artificial Intelligence",
 			"Supervised Learning"
 		],
-		"rating": "",
 		"syllabus": "Introduction\n-Welcome to Machine Learning! In this module, we introduce the core idea of teaching a computer to learn concepts using data\u2014without being explicitly programmed. The Course Wiki is under construction. Please visit the resources tab for the most complete and up-to-date information.\n\nLinear Regression with One Variable\n-Linear regression predicts a real-valued output based on an input value. We discuss the application of linear regression to housing price prediction, present the notion of a cost function, and introduce the gradient descent method for learning.\n\nLinear Algebra Review\n-This optional module provides a refresher on linear algebra concepts. Basic understanding of linear algebra is necessary for the rest of the course, especially as we begin to cover models with multiple variables.\n\nLinear Regression with Multiple Variables\n-\nWhat if your input has more than one value? In this module, we show how linear regression can be extended to accommodate multiple input features. We also discuss best practices for implementing linear regression.\n\nOctave/Matlab Tutorial\n-This course includes programming assignments designed to help you understand how to implement the learning algorithms in practice. To complete the programming assignments, you will need to use Octave or MATLAB. This module introduces Octave/Matlab and shows you how to submit an assignment.\n\nLogistic Regression\n-Logistic regression is a method for classifying data into discrete outcomes. For example, we might use logistic regression to classify an email as spam or not spam. In this module, we introduce the notion of classification, the cost function for logistic regression, and the application of logistic regression to multi-class classification.\n\n\nRegularization\n-Machine learning models need to generalize well to new examples that the model has not seen in practice. In this module, we introduce regularization, which helps prevent models from overfitting the training data.\n\nNeural Networks: Representation\n-Neural networks is a model inspired by how the brain works. It is widely used today in many applications: when your phone interprets and understand your voice commands, it is likely that a neural network is helping to understand your speech; when you cash a check, the machines that automatically read the digits also use neural networks.\n\nNeural Networks: Learning\n-In this module, we introduce the backpropagation algorithm that is used to help learn parameters for a neural network. At the end of this module, you will be implementing your own neural network for digit recognition.\n\n\nAdvice for Applying Machine Learning\n-Applying machine learning in practice is not always straightforward. In this module, we share best practices for applying machine learning in practice, and discuss the best ways to evaluate performance of the learned models.\n\n\nMachine Learning System Design\n-To optimize a machine learning algorithm, you\u2019ll need to first understand where the biggest improvements can be made. In this module, we discuss how to understand the performance of a machine learning system with multiple parts, and also how to deal with skewed data.\n\n\nSupport Vector Machines\n-Support vector machines, or SVMs, is a machine learning algorithm for classification. We introduce the idea and intuitions behind SVMs and discuss how to use it in practice.\n\n\nUnsupervised Learning\n-We use unsupervised learning to build models that help us understand our data better. We discuss the k-Means algorithm for clustering that enable us to learn groupings of unlabeled data points.\n\nDimensionality Reduction\n-In this module, we introduce Principal Components Analysis, and show how it can be used for data compression to speed up learning algorithms as well as for visualizations of complex datasets.\n\n\nAnomaly Detection\n-Given a large number of data points, we may sometimes want to figure out which ones vary significantly from the average. For example, in manufacturing, we may want to detect defects or anomalies. We show how a dataset can be modeled using a Gaussian distribution, and how the model can be used for anomaly detection.\n\n\nRecommender Systems\n-When you buy a product online, most websites automatically recommend other products that you may like. Recommender systems look at patterns of activities between different users and different products to produce these recommendations. In this module, we introduce recommender algorithms such as the collaborative filtering algorithm and low-rank matrix factorization.\n\nLarge Scale Machine Learning\n-Machine learning works best when there is an abundance of data to leverage for training. In this module, we discuss how to apply the machine learning algorithms with large datasets.\n\nApplication Example: Photo OCR\n-Identifying and recognizing objects, words, and digits in an image is a challenging task. We discuss how a pipeline can be built to tackle this problem and how to analyze and improve the performance of such a system.",
 		"teachers": ["Andrew Ng"],
 		"details": {
@@ -138,7 +137,150 @@
 			],
 			"DURATION": "11 weeks long"
 		},
-		"link": "http://click.linksynergy.com/fs-bin/click?id=SAyYsTvLiGQ&subid=&offerid=451430.1&type=10&tmpid=18061&RD_PARM1=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fmachine-learning&u1=gtc_direct"
+		"link": "http://click.linksynergy.com/fs-bin/click?id=SAyYsTvLiGQ&subid=&offerid=451430.1&type=10&tmpid=18061&RD_PARM1=https%3A%2F%2Fwww.coursera.org%2Flearn%2Fmachine-learning&u1=gtc_direct",
+		"rating": "4.7",
+		"reviews": [
+			{
+				"id": "review-7057",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed", "medium"],
+				"text": "Machine Learning is one of the first programming MOOCs Coursera put online by Coursera founder and Stanford Professor Andrew Ng. Although Machine learning has run several times since its first offering and it doesn\u2019t seem to have been changed or updated much since then, it holds up quite well. This course assumes that you have basic programming skills. Assignments also require many vector and matrix operations and slides include some long formulas expressed in summation notation so it is recommended to have some familiarity with linear algebra. You don't need to know calculus or statistics to take this course, but you may gain deeper insight into some of the material if you do. The course uses the Octave programming language, a free clone of MATLAB.\n\nThe course runs 10 weeks and covers a variety of topics and algorithms in machine learning including gradient descent, linear and logistic regression, neural networks, support vector machines, clustering, anomaly detection, recommender systems and general advice for applying machine learning techniques. Lectures are split into 3 to 15 minute segments with periodic quizzes and each topic section has a corresponding quiz. Section quizzes are worth 1/3 of the total grade but you get unlimited attempts (with a 10-minute retry timer.). Andrew Ng does a good job explaining dense material and slides although the audio levels are often too low. If you don' have good speakers you might need headphones to hear him talk. The other 2/3 of the course grade is based on 8 multi-part programming assignments that typically involve filling in code for key functions to implement machine learning algorithms covered in lecture. The course gives you a lot of structure and direction for each homework, so it is generally pretty clear what you are supposed to do and how you are supposed to do it even if you don't understand 100% of the materiel covered in lecture. You need to achieve a total score of 80% to earn a certificate, so while you can retry quizzes and resubmit programming assignments you'll have to get most things to work in the end to get one.\n\nMachine learning is a great course if you can get past quiet audio. If you've never used Octave or MATLAB before, don't let that stop you from taking this course: learning the basics necessary to do the assignments only takes a couple of hours and it will help you think of things in terms of vectorized operations.\n\nI give this course 4.5 out of 5 stars: Great."
+			},
+			{
+				"id": "review-686",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "Background elements:\n\nI'm an engineer by trade and have been working on statiscal projects in field of transport regulation for about ten years.\n\nI have some general background in maths and theorical computer science, I'm capable of programming.\n\nI followed this course in order to developp my professional skills.\n\nI did perform most review test without much trouble, I didn't do most of the programming exercise due to everyday work and as I wasn't too eager to get into another programming language at the time (Octave).\n\nI had significant (if old) linear algebra training and had already previously learned some of the methods displayed.\n\nI didn't find this course very intellectually challenging and you should take that as a compliment. A.Ng is able to expose what many people would make complex in a clear and simple fashion.\n\nMany of the things I already know became much clearer after I took the course and I learned a lot of new stuff.\n\nI wish I had had such a great teacher when I was a student. I highly recommend this course for anyone getting started with machine learining.\n\nThe only problem I see with this course if that it sets the expectation bar very high for other courses. Unfortunately many other courses on Coursera, even from renowed universities, aren't as great."
+			},
+			{
+				"id": "review-3304",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "This is possibly the most outstanding university class you will ever take. It is definitely the best university level course I have ever taken, and I have taken quite a few, both in person and online (MOOC). If you have any interest whatsoever in how computers learn to recognize faces, text, or recommend movies you might like, this class is nearly perfect in every way.\n\nThe instructor is an amazing human being and as cofounder of Coursera cares deeply about education. Yes, you will have to do some programming, but the instructor assumes no previous knowledge and all the information you need is available online. You will probably need to plan to spend more time on this class than estimated if you are a newcomer to computing, but only due to your background, not because the instructor has not organized the material in the most efficient and convenient format possible. Unlike some other poorly-thought-out MOOC where you waste time looking for information or confused about what is expected, this class is extremely well organized and presented in a straightforward, humble manner. In fact, I would suggest that any professor wishing to teach an online MOOC class should take this class first to see how real teaching is done by a professional who really knows the material but is not trying to impress the students with his knowledge by confusing them unnecessarily.\n\nThis is not an easy class, but it is tremendously rewarding to complete. It will probably expand your mind a few IQ points."
+			},
+			{
+				"id": "review-14030",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "I was able to finish this 11-week MOOC in ten days because the materials are a fine balance between succinct and comprehensive and very engagingly presented. I was initially turned off by the use of MATLAB/Octave as the programming language of choice for the assignments, but I found them relatively painless and well-crafted to give the student a modular view of how these machine learning algorithms work and the possible optimizations when implementing them.\n\nI had exposure to many of the concepts before taking the class, but had never implemented or understood the mathematics behind any of the algorithms until taking this MOOC. It serves equally well as an overview of some of the most important \"bread and butter\" techniques in the field as it does a jumping off point into other, more specialized machine learning lessons. In fact, that is my suggestion for anyone interested in this MOOC: take it and complete all the lessons, then immediately dive into using the techniques in another MOOC or toward a project of your choosing to maximize the benefits.\n\nThe concepts covered in this MOOC include linear regression, logistic regression, forward propagation and backpropagation in neural networks, support vector machines, recommendation systems, and collaborative filtering."
+			},
+			{
+				"id": "review-35646",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "My opinion is very personal.\n\nIn my view, taking a class rather then reading a book has one fundamental aim: make it easier and faster to get workable knowledge on a topic and to capitalize on it.\n\nIn other word the objective of such a class should be: get knowledge you can use in a fast and effective way. This class does none of that. Really, it DOES NOT! I have maybe spent 150 hours on this class hoping to get something real out of it. All I got is confusion and a better idea about the topic in general. After 150 hours you should be able to confortably produce something, no? Well, I was not able to do more than the taxi driver next door. What a time sucking class for zero workable knowledge!!!! Then I went to take the same class on Datacamp. Believe or not, one month later I was doing GREAT stuff with it (I am pro trader) and the total time spent on it was about 20% what I had spend on coursera. Frankly, this class is plain BS given the ratio of what you get versus what time it takes... Never again!"
+			},
+			{
+				"id": "review-298",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "Andrew Ng is a clear and charismatic lecturer, he covers advanced techniques, and he provides a number of practical tips, but the programming exercises are a bit canned, and may not fully prepare students to write their own scripts in Octave.\n\nThe exercises involve mostly copying and pasting, rather than writing entire scripts. There's a reason for this: the focus of the course is on algorithms, not on other parts of solving machine learning problems\n\nMy final concern is that Machine Learning seems to have gone on autopilot at this point, with little or no attention from Ng or anyone else who helped him prepare the course materials. Questions in the discussion forum are answered instead by \"Community TA's\", that is, volunteers who took earlier sessions of the course.\n\nDespite these concerns, I still heartily recommend Machine Learning as a valuable starting point for anyone interested in data science."
+			},
+			{
+				"id": "review-325",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "This course is famous. It\u2019s taught by the equally famous Coursera co-founder and ML-star, Andrew Ng. Though I found this class to be one of the worst learning experiences I\u2019ve had with a MOOC, I really have to say I love Andrew\u2019s ability to explain things and the way he teaches in general.\n\nThere were several problems, though. First of all, the set-up instructions for Mac were broken. Much more importantly, the class is not comparable to Andrew\u2019s actual ML class at Stanford. Throughout the course, he keeps telling students not to worry about the math, and spoon feeding equations to us. Worse still, I was able to get a 150% (i.e. massive extra credit) on the first assignment without actually understanding what was going on. The programming assignments were mostly done for us, with just a line or two that needed to be filled in. Amazingly, those missing lines were sometimes in the class slides. If I could change just one thing about the class, it would be to greatly increase the amount of homework."
+			},
+			{
+				"id": "review-112",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed", "4 hours", "medium"],
+				"text": "Professor Ng is extremely clear. His lectures are extraordinarily well-organized, thoughtful, and clear. The assignments are interesting, relevant, and not too difficult.\n\nAfter completing the course, I took MIT's open Linear Algebra course, and at that point was able to get more of the mathematical background. Professor Ng was very careful to present the material without much math -- impressive to say the least. However, once I got more of the mathematical background, I felt much more solid in my understanding."
+			},
+			{
+				"id": "review-30098",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["8 hours", "medium"],
+				"text": "Low production values; terrible audio quality; a very traditional, mostly non-interactive approach... and yet, this course manages to be one of the best I've ever taken. The quality of Andrew Ng's teaching is just *that* good. He's a rare case of a world-level expert that's also extremely good at communicating his knowledge. This guy makes you wish you could shake his hand and buy him a beer at the end of each lesson.\n\nThis course proves that a skilled human with a whiteboard can still beat the bells and whistles of more expensively produced trainings. If you know little or nothing about Machine Learning, it will give you a solid foundation."
+			},
+			{
+				"id": "review-64",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "A lot of participants were concerned that it was a watered down version of Stanford\u2019s CS229. And, in fact, the course was more limited in scope and more applied than the official Stanford class. However, I found this to be a strength. Because I was already familiar with most of the methods in the beginning (linear and multiple regression, logistic regression), I could focus more on the machine learning perspective that the class brought to these methods. Programming exercises were done in Octave, an open source Matlab-like programming environment."
+			},
+			{
+				"id": "review-737",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "I was completely new to ML but never felt lost while taking this course (completed yesterday). The programming assignments are a bit watered down in that most of the \"boilerplate\" is already written but you still get great insight with whatever is left for you to implement -- in particular, learning to write vectorized code is what I found immensely useful."
+			},
+			{
+				"id": "review-5056",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed", "7 hours", "medium"],
+				"text": "Prof Ng simplifies ML as much as possible - and no more. In the complex arena of ML, that still leaves things fairly complex... But thanks to this course (which I'm 90% of the way through) I feel like I'll have a sufficient intuitive grasp of ML for vaguely sensible use of the many prebuilt libraries now available in the field.\n\nThis course should also provide a framework for coping with the remaining complexity entailed by deeper study, and motivation to brush up on the related mathematical tools, where necessary.\n\nOn the downside, there are some avoidable glitches in the course materials. For someone like me, new to Matlab/Octave, these significantly increase the time requirement for the coding assignments - which are clearly intended to be pretty simple if you know what you're supposed to be doing. This adds to the already high frustration level learning a new programming language/environment can entail. And presumably the course's attrition rate - a shame, because even with these flaws it's really very well done.\n\nDeep Learning can wait Prof Ng - this deserves your attention! ML for the people!"
+			},
+			{
+				"id": "review-718",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed", "6 hours", "hard"],
+				"text": "Best class I've ever taken.\n\nNow I feel like I have a super power. The hard part now is trying to figure out what problems I'd like to swoop in and try to solve."
+			},
+			{
+				"id": "review-10515",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["4 hours", "medium"],
+				"text": "Having completed a number of MOOCs I was pleasantly surprised to find out how good this one is. The course is taught well with lectures that are challenging at first glance but explained well, I felt like I made good progress in understanding the subject.\n\nThe course did require some understanding of calculus and algebra, but nothing too difficult. Some people who had not done either subject for some time did need to spend some time refreshing their knowledge. In addition, you will need some familiarity of programming or at least the willingness to put in the time required to bring yourself up to speed.\n\nFor more advanced learners, this should serve as a good introductory course, although it will require more in depth learning in addition to the course, to be able to fully utilise some of the ideas.\n\nTo sum up, a worthwhile course for a range of abilities. Based on our study group of 20 or so learners of all levels, people seemed to think the course was good. Everyone found the programming exercises on backtesting a challenge!"
+			},
+			{
+				"id": "review-49678",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed", "8 hours", "medium"],
+				"text": "Personally, I value MOOCs of either [demanding and rewarding] type or [relaxing] type. This one, though overly famous, is neither.\n\nI finished this MOOC at around Feb, 2017, with the hope that it can help me with my transition of career. But in the end I feel apart from a paid certificate, I get almost nothing. **All you need is to interpret the mathematical formula in the slides, to be able to later program them with a programming language called Octave.**\n\nIs it really of no value? Well, you still can gain something, like practicing your ability of blind mimic. But the really valuable thing, like gaining insight to think and formulate problems on your own, cannot be reached by translating dead mathematical formula to code."
+			},
+			{
+				"id": "review-12766",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed", "6 hours", "medium"],
+				"text": "It is a very good course for anyone who wants to begin their journey into Machine Learning. The course is well structured and well taught by the Prof. Ng.\n\nYou don't have to have any background in Matlab/Octave but a programming background is needed.\n\nNeural Network related programming assignments are a bit hard compared to other assignments. But, overall there isn't much programming to do except for filling code in some functions.\n\nOverall, it is a very good course and you will learn a lot at the end of the course."
+			},
+			{
+				"id": "review-2685",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "It is a very well-balanced version of the course. Some time ago I tried watching the original Stanford video recording of this course and it was too dry with endless math derivations. On the other hand, this interactive Coursera version strikes the right balance between the theory and application. The course is very practical and you can build very useful systems just based on the material presented in the course. I've watched several similar courses, and this one is by far the best."
+			},
+			{
+				"id": "review-5257",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed", "5 hours", "easy"],
+				"text": "A really good course with focus on basic algorithms and techniques in the field of ML. Regression, Neural networks and SVMs are some of the techniques taught by Andrew Ng. Video lectures are good and material is well explained. The course also helps in learning Octave and its basic syntax; the notion of vectorized code is introduced. Coding assignments are easy and most of the code is just ready to be filled. It is a very basic intro to ML nonetheless a well-constructed course."
+			},
+			{
+				"id": "review-7696",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed", "4 hours", "very easy"],
+				"text": "A fairly good overview of machine learning, with a fair amount of breadth but almost no depth. Good introduction for a non-technical audience, with only a high-school grasp of calculus and a little bit of linear algebra.\n\nThe exercises were very basic, and the programming exercises were pretty canned --- you could easily complete them without any real understanding of the material nor any programming knowledge.\n\nReally, this course only taught you enough to be dangerous --- enough \"understanding\" to go around and build models, but not enough to avoid pitfalls."
+			},
+			{
+				"id": "review-4180",
+				"username": "Gregory S",
+				"rating": "4.7",
+				"adjs": ["completed"],
+				"text": "All other Machine Learning courses require an advanced knowledge of programming, this one is not, and I really appreciate it as I have a background in statistics but not much coding experience . Great course, highly recommend to anybody who is interested in data."
+			}
+		]
 	},
 	"independent-elements-of-ai-12469": {
 		"subject": "cs",
@@ -147,7 +289,6 @@
 		"school": "University of Helsinki",
 		"provider": "Independent",
 		"categories": ["Artificial Intelligence"],
-		"rating": "",
 		"syllabus": "Part 1\nWhat is AI?\nPart 2\nSolving problems with AI\nPart 3\nReal world AI\nPart 4\nMachine learning\nPart 5\nNeural networks\nPart 6\nImplications\n ",
 		"teachers": [],
 		"details": {
@@ -160,7 +301,150 @@
 			"START DATE": ["Self paced"],
 			"DURATION": "6 weeks long"
 		},
-		"link": "http://www.elementsofai.com/"
+		"link": "http://www.elementsofai.com/",
+		"rating": "4.8",
+		"reviews": [
+			{
+				"id": "review-49009",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed", "3 hours", "easy"],
+				"text": "The overall and weekly course objectives were stated clearly, much more clearly than many other courses I have explored.\n\nThe course had lots of reading, including extra links to other pages. There were no videos. Each chapter\u2019s material consisted of three pages, but they were long pages full of comprehensive information. It was an excellent introduction to just what AI is and the implications in today's society of the many applications of AI both now and into the future. The assessments were unforgiving, with only one attempt available for most questions. I made basic mistakes in some answers but managed to pass the course quite comfortably.\n\nI found the course surprisingly interesting!"
+			},
+			{
+				"id": "review-50126",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "I like the kind of awareness this course provides, helping everyone from different works of life to see how they can relate in the fields of AI. One of the most simple, non-boring, good material content, captivating free online certification course ever. Thought at first I will not have enough time to take the course because of my kind of schedule but when I started, just with my mobile phone, I couldn't let the course down. The most exciting part was wanting to see what your peers think about your review and waiting for your certificate."
+			},
+			{
+				"id": "review-54086",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "The course covered the basics with lots of exercises. Many of the exercises were designed to evaluate how well the student understood the concepts, rather than whether the student had just read the material. I particularly liked how the course demystified AI by linking it to past concepts and theories. New ideas are often presented out of context (both in terms of related ideas and how the concepts are used) which makes understanding them and their relevance more difficult.\n\nI look forward to additional courses in the series."
+			},
+			{
+				"id": "review-51217",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed", "5 hours", "hard"],
+				"text": "I found this course interesting and necessary for a basic understanding if AI. The course was structured so that the concepts evolved nicely from beginning to end.\n\nI recommend this course to anyone who wants to start their journey into the understanding of AI. I now have more insight into the biases of google search and facebook ads and i understand the need to look for alternative searches so as to not be bogged down by liberal biases as exemplified in google, facebook, and twitter."
+			},
+			{
+				"id": "review-51524",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "The course for me was too chatty meaning that the text was full of irrelevant sentences. Despite the fact that those sentences were on-topic, they were more like decorations rather than giving more in-depth information. In addition, there should have been more text-related graphs and schematics to further enchance learning. Although, there were lots of pictures, only few were illustrating actual information the text told. Overall, the course did give an insight into AI.\n\nThis doesn't suit well for those who like to get to the point, who have photographic memory or want to have a more informative introductory course into AI. Despite this, the course would suit very well for, say 9th graders or younger. But also for those people who do not study technology yet want to have a good life-like overview about AI with every-day examples."
+			},
+			{
+				"id": "review-52486",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed", "2 hours", "easy"],
+				"text": "I found this course to be a fantastic introduction to the conceptual as well as technical elements of artificial intelligence, machine learning, and deep learning. Although these aforementioned fields are heavily rooted in algebra and advanced calculus, the course content was very good at breaking down all of this complexity for those of us who do not necessarily have a conventional mathematics background.\n\nSome of the modules (such as the module on neural networks) might warrant you having to watch a couple of additional videos for further clarification, but on the whole, I really enjoyed the experience of working through this course.\n\nI encourage anyone who is interested in this undoubtedly exciting intellectual space to give this course a go!"
+			},
+			{
+				"id": "review-53803",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed", "2 hours", "easy"],
+				"text": "Il est n\u00e9cessaire d'am\u00e9liorer la compr\u00e9hension du domaine de l'Intelligence Artificielle en entreprise, ce qui permettrait d'ouvrir sur de nouvelles possibilit\u00e9s tout en limitant les fantasmes...\n\nCe cours de l'Universit\u00e9 de Finlande (https://lnkd.in/gH3QvJx) est assez agr\u00e9able \u00e0 lire et permet un premier niveau d'acculturation au sujet, en montrant de fa\u00e7on concr\u00e8te les grands principes, avec des exercices qui ne feront pas de vous un Data Scientist (^_^), et en \u00e9voquant les sujets soci\u00e9taux.\n\nUn article des Echos pr\u00e9sentant la g\u00e9n\u00e8se du cours : https://lnkd.in/gsRrDxB\n\nAyant une m\u00e9moire visuelle, j'aurais appr\u00e9ci\u00e9 un peu plus d'illustration des diff\u00e9rents concepts au fur et \u00e0 mesure du cours (ce qu'il manque pour une 5\u00e8me \u00e9toile)."
+			},
+			{
+				"id": "review-52798",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "Very interesting course with some basic reading on AI and underlying logic. Very practical examples and hands on excercises based on readings and examples. The course content is logical and very halpful in learning the basics on how AI works. I found the content to be from easy to moderately difficult. A little of mathematical understanding is needed, but course had good links to supplementary information for refreshing or learning needed topics. It was also good that one can do course in own speed or the course can remind you to do one chapter (six in total) per week, which is quite nice and relaxed space."
+			},
+			{
+				"id": "review-54058",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "It is a very good introduction course to AI. This is relatively complicated and diverse subject and finishing the course, I personally feel more comfortable and familiar with it. Now I can understand the discussions around AI a little bit better and I think, if one wants to study more and deeper, the course put you at a very good position for that matter.\n\nIf it was to me, I wanted more practices and exercises. Also some questions are not clear the first time you read them but again you can find enough extra material if you do a simple search yourself."
+			},
+			{
+				"id": "review-58221",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "This course is really good! I completed the course and also downloaded my certificate.\n\nThe course is designed very systematically, very carefully weave the concepts along with stories and examples making sure the reader gets the concept very well. Also, some exercise are easy and some of them are moderate.\n\nThe course covers multi facets of AI, its inception, General perception, case studies, applications, methods etc. as an elementary course this is really good and more importantly it develops the interest into the reader about the AI."
+			},
+			{
+				"id": "review-47940",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "I did not find the reading and the exercises well balanced. Reading was fun, the goal and focus of the exercises not so. For someone having studied some maths and computer science - just read the text or take another class; you\u2019ll get frustrated with the vague definitions used in the exercises.\n\nI finished the course just to improve the statistics of the course itself ;)\n\n(Thumbs up for the effort of preparing the course, with still a bit more effort it will be a good one)"
+			},
+			{
+				"id": "review-58341",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "I liked the course content, and the combination of technical and philosophical topics. It forced me to think about topics that previously seemed a little bit too abstract for my literal mind.\n\nHowever, I found the user interface with the engangement questions a little bit confusing - Information was no self-contained in the questions and could be easily overlooked. More excercises could have been made interactive (e.g. the Euler Diagram and State transitions)."
+			},
+			{
+				"id": "review-58560",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "Everyone should read at least the first chapter of the course. There are so many misunderstandings about AI, most people doesn't have a clue of what it really is and just want to \"buy an AI that can fix it\". The course is pedagogical, but the translations into Swedish would need a second round, some of the exercises are difficult to understand because of strange language.\n\nA very nice, and important, course for everyone with basic math skills to read!"
+			},
+			{
+				"id": "review-50949",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed", "4 hours", "medium"],
+				"text": "I really appreciated this mini-course. It explains to you the basics of AI by simple everyday analogies making it suitable for an average adult to succeed in comprehending the basis of AI. Also, they make funny jokes once in a while. Overall, I'd highly recommend this course for anyone interested in really understanding how Google algorithms work or the present state of AI without the unnecessary and frequent alarmism we usually see on TV."
+			},
+			{
+				"id": "review-55215",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "This is great for anyone interested to have a high-level overview of AI. Well-structured and interesting; I always wanted to proceed to the next lesson!\n\nThe material and the exercises are very well presented. The course does not require any specific background.\n\nThe only thing that could be improved is the peer-review process that sometimes takes some minutes and sometimes takes days.\n\nI will probably take the new course when available."
+			},
+			{
+				"id": "review-52796",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "If you're looking for an entry into Artificial Intelligence (AI) don't look beyond this course.\n\nThis course provides good foundation to AI.\n\nIt's starts off by highlighting the relationship between AI, Machine Learning (ML) and Deep Learning (DL) and how it align with statistics.\n\nThe key concepts are well explained for amateurs in AI to understand.\n\nI recommend this course to new people who want to understand the basics of AI."
+			},
+			{
+				"id": "review-65251",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": [],
+				"text": "The texts are a bit extensive but the course is all very well tailored for better understanding. The examples are based on daily scenarios and the peer review questions help on the engagement as well. Wo uild recommend for everyone who's looking for a theory-based AI course to then move into more practical [coding] examples.\n\nWaiting for part II, where UH is planning to implement a some coding exercises in Python."
+			},
+			{
+				"id": "review-51406",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "For me as a Governmental clerk that take interest in contemperary world and the new technical sollutions and try to use as much as i feel i need and can. This was an Eye opener and yet a balanced view of AI development. It was quite challenging to follow the logic and different aspects of machine lerning bt it was all rightfully handled and easy to follow. I highly recomend this course !"
+			},
+			{
+				"id": "review-55603",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "The course provides good AI foundation with practical examples and excercises\n\nThis course has good links to supplementary information for refreshing or\n\nlearning needed topics and it is highlighting the relationship between AI, Machine Learning and Deep Learning\n\nMathematical understanding is needed.\n\nI recommend this course if you would like to understand the basics of AI."
+			},
+			{
+				"id": "review-63809",
+				"username": "Pat B",
+				"rating": "4.8",
+				"adjs": ["completed"],
+				"text": "Very complete course, I am a CS undergrad student but this course could be taken even from non-tech workers. You should be familiar with basic math and a bit of probability and you are done.\n\nIn late 2019 Part 2 (which will be more pratical) will be composed of Python programming language.\n\nSo, start this very interesting course and be ready for the second part!"
+			}
+		]
 	},
 	"edx-introduction-to-computer-science-and-programming-using-python-1341": {
 		"subject": "cs",
@@ -169,7 +453,6 @@
 		"school": "Massachusetts Institute of Technology",
 		"provider": "edX",
 		"categories": ["Computer Science"],
-		"rating": "",
 		"syllabus": null,
 		"teachers": ["Ana Bell", "Eric Grimson", "John Guttag"],
 		"details": {
@@ -199,6 +482,149 @@
 			],
 			"DURATION": "9 weeks long"
 		},
-		"link": "http://www.awin1.com/awclick.php?gid=295463&mid=6798&awinaffid=301045&linkid=599979&p=https%3A%2F%2Fwww.edx.org%2Fcourse%2F6-00-1x-introduction-to-computer-science-and-programming-using-python-4&clickref=gtc_direct"
+		"link": "http://www.awin1.com/awclick.php?gid=295463&mid=6798&awinaffid=301045&linkid=599979&p=https%3A%2F%2Fwww.edx.org%2Fcourse%2F6-00-1x-introduction-to-computer-science-and-programming-using-python-4&clickref=gtc_direct",
+		"rating": "4.5",
+		"reviews": [
+			{
+				"id": "review-4656",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed"],
+				"text": "This is an excellent course that will teach you some Python, but more importantly will teach you algorithmic thinking and how to break down large problems into simpler ones. I came into it with some self-taught Python knowledge and found it challenging but manageable. Absolute beginners may want to first try Google's free Python course or some other quick introduction to the language.\n\nThe problem sets are very hard, but also the best part of the experience: they drive home the lecture concepts and completing them successfully makes you feel accomplished. Some examples: we had to write programs that could monitor news feeds over the internet, simulate the behavior of a Roomba vacuum, model the growth of viruses in a sick patient, and determine the best path between nodes on a graph. You always have two weeks to complete a problem set, which is enough to give you some flexibility yet still allows you to stay on a steady schedule.\n\nThere were some logistical difficulties with the course: the last problem set wasn't released on schedule, and so the concepts I learned towards the very end of the class felt a little rushed and untested. But I imagine that these wrinkles will be smoothed out in the future.\n\nIn short: it's a challenging class for CS beginners, but definitely recommended."
+			},
+			{
+				"id": "review-29945",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": [],
+				"text": "I'm taking this class as a refresher and as a way to dig into some sorting algorithms that I haven't used in awhile but if I was new to coding/python, I would find this class to be very confusing. The lectures aren't presented very clearly. The slides are disorganized, often times with the professor making random, nonsensical scribbles that are more distracting than helpful. When you do see the code example screen, there's old code, unused code, and sometimes superfluous code that would be extremely confusing to a beginner. Topics in the first few weeks don't seem to build on one another in a very logical manner. The exercises seem to be very pedantic in nature. The tests that run against your solutions to the exercises require the solution to be entered in an exact format. So for example, if you enter in \"1,2,3,4\" your solution will be rejected since the tests is looking for \"1, 2, 3, 4\". There's a bit of irony in that a class on programming doesn't have a test capable of parsing out the solution you input. Maybe I'm not paying as much attention as I should, but I swear there are exercises that ask you to use concepts you wouldn't know about from just having watched the lectures. In addition to these issues, there are some community TA's that seem to be almost combative in the class discussion forums. I'm really hoping that this class improves the deeper in you get. I'd imagine that a lot of people take this class purely based on the prestige associated with the MIT name but if you're new to coding you'd do yourself a favor by either taking Harvard's CS50 or grabbing the topics in the course and finding one of the hundreds of bootcamp blog posts that cover these same topics."
+			},
+			{
+				"id": "review-5557",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "6 hours", "medium"],
+				"text": "This is a well-crafted, fast-paced introduction to Computer Science, though a little dry at times. I think it's based on the introductory 'CS for non CS majors' course at MIT.\n\nThe pace, relative complexity of some of the subject matter* and difficulty of a few of the exercises - I'm not a gifted programmer and I found a couple fairly challenging despite some background - might make it better suited as a second (or third) course for some, despite using Python (perhaps the easiest programming language to pick up). Rice's IIP or Udacity's CS101 - which I'd both done earlier - would both be good preparation (or fallback options, if you try this and find it too hard).\n\nI just completed the final exam, which is untimed (you get a long weekend to complete it) & accounts for 25% of the grade). I seemed to test a pretty representative selection of the material, at a level comparable in difficulty to the homeworks.\n\n*It includes introductory material on object orientation (including inheritance), recursion, data structures (trees) and algorithms (including big O notation, tree search)."
+			},
+			{
+				"id": "review-18259",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": [],
+				"text": "The course moves very quickly and has required 20+ additional hours of work weekly beyond the instruction. The lectures are very contained in their scope, but the scope of the problems jumps far beyond the lecture and requires much unsupported research (really guessing, in many cases!). This problem could be easily rectified with a more gradual evolution of problems. (Bridging problems between the current short end-of-lesson questions and complex weekly problems.) On-screen the graphics are difficult to follow with a very small font making it hard to see key characters. The execution screen is full of past work and so that with the phrase \"Let's see what this does!\" it is unclear (and obscured) what was typed in and what resulted since you visually have to jump from the code screen to the execution screen in the midst of lines of text (and again, a very small font). And while this may not be the typical \"requirement\" of a college course, the examples of where and in what context a given code might be utilized is much better provided in other online courses. The course content on the whole is solid but half-baked in execution with poor visuals, pacing, and contextual application to the real world."
+			},
+			{
+				"id": "review-11247",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "12 hours", "very hard"],
+				"text": "I just finished this class. It was much harder and moved much quicker than any other MOOC I have taken. I learned a lot, but it was a lot more work than I had really anticipated. I am a complete novice with no programming experience, so perhaps that was my fault.\n\nI did finish (just this second) and did get a good grade, but I put far more time and effort into the class than I had expected. Be prepared!\n\nAs an example the first 3 'week' projects are due 4 days apart (Thurs, Tue, Fri due dates) so the 'week' concept was a bit misleading. Again, I really enjoyed and learned a ton, but I hope others know their expectations.\n\nAlso a lot of the work is self taught. You need to go out and find the answer far more than expect the answer to be in the videos or exercises."
+			},
+			{
+				"id": "review-3066",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed"],
+				"text": "This was probably the best introduction to computer programming I have ever seen. The professors are engaging and the lectures are short and to the point. Finger exercises between lectures really drive home the points that the professors were trying to make. The programming assignments were challenging enough to make you feel like you have accomplished something, but the specifications were generally enough to get you through it. The forums were invaluable to completing the assignments and were full of very bright students with excellent questions. The Midterms were very challenging, especially the first one. I liked how once the fundamentals of Python were covered, the focus moved to solving real world engineering problems, but I still feel that there is a lot more to learn about Python. I'd take another class from this MIT group in an instant."
+			},
+			{
+				"id": "review-14489",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "35 hours", "medium"],
+				"text": "Great course! But you have to work a lot, not get frustrated and be ready to think out of the box and get out of the comfort zone to solve the problems.\n\nOne of the things to take away from this course for me was that coding of complex programs is not done alone. Brainstorm with some one else if the approach you are taking to solve the problem is on the right track. Pseudocodes are important.\n\nAnother thing I learnt in this course is that they make you work hard on the Problem sets so that you are well prepared for the Finals. You may have difficulty winning the battle but you will win the war because you are well prepared for it.\n\nAt the end of it, it's real power when you tell the computer what you want it to do and it does that!"
+			},
+			{
+				"id": "review-11936",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "2 hours", "hard"],
+				"text": "The many practice quizzes are very useful and I could follow the first half of the course but when I encountered a problem with an exercise around the middle of the course I couldn't solve it and since I was too busy to find other help (e.g. books/resource persons), I was stuck and gone off track with the course schedule. So I had to drop this course. I'd recommend this course if you have someone around who already knows programming because as with other computer stuffs, sometimes a small thing can get you stuck and you can look at it a million times and still can't see where the problem lies."
+			},
+			{
+				"id": "review-27824",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "4 hours", "medium"],
+				"text": "This course covers a lot of ground, so it may be demanding for a beginner. However, if you have some programming experience and just want to get all you knowledge into a system and learn some python it can be pretty manageable. Problems sets can be challenging, but not if you've solved similar problems in another language. So I recommend it to someone who has done at least a CodeAcademy course, so you wouldn't feel thrown into a deep end right away. Otherwise it's a great course. I personally enjoyed the instructor's sense of humour and barely contained enthusiasm for the subject."
+			},
+			{
+				"id": "review-33788",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "12 hours", "hard"],
+				"text": "daslk klsd fklasjdf lkajsflk jaslk c iajwoie xcn xio oq o o no ja qp p dpj aoidn ff xaalkd j oq p di faoif q pq nj diof jalk nlkjfk"
+			},
+			{
+				"id": "review-49676",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "11 hours", "hard"],
+				"text": "A life-changing MOOC. I take this MOOC aside from my work as a government clerk in China in 2016, which is very unsatisfactory. At that time, I was 24, graduated from an Econ & Business university, beaten by the humiliating experience of working in a rigorous hierarchy, and most relevant, never touched programming.\n\nThis MOOC helped me to recognize my potential in the field of computer science. It is demanding, even might cause you scratchingly uncomfortable. But it is definitely a worth try. As the saying goes, \"good things take time\".\n\nI finished the course a bit more than 2 years ago, and guess what? From a speck of humble dust in the giant bureaucratic machine, to a first-year Bachelor student of Computer Science at a recognizable university at the age of 26!\n\nMy life trajectory is running on a new track, and in the determination of this amazing transition (it is especially hard if you are from the developing world where the society is not so tolerant), I'd say this MOOC plays a fundamental role.\n\nThanks to edx, thanks to MITx!"
+			},
+			{
+				"id": "review-2120",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed"],
+				"text": "This course has been my best online 'tutorial'. Instructor approaches teaching from 'first principle' and for me that is the way to go. I was able to grasp the fundamentals of programming on the fly. I entered the course with the aim of getting first hand education on python programming to enable me write scripts for digital design as an architect but I chanced upon a requisite knowledge I never earlier imagined. Each lesson was modest in design, well defined in specific objective, and understandable information. It covered a wide range of lessons needed for computer programming and would recommend it for anybody who wants to learn computer science."
+			},
+			{
+				"id": "review-12712",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "15 hours", "hard"],
+				"text": "Excellent introduction class for anyone wanted to learn Python either you are a beginner/student or a professional experienced engineer wanted to learn something new. The class is somewhat medium-to-hard to follow and requires quite an attention and regularity of attendance (it's an esteemed MIT after all) but presenters and authors MIT's Professors John V. Guttag, Eric Grimson and Ana Bell did an extraordinary job of making a learning curve as gentle and pleasant as humanly possible. Personally, to me it's the very Eric Grimson's teaching style which kept me going."
+			},
+			{
+				"id": "review-4676",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed"],
+				"text": "This is am amazing class. One of the best so far MOOCs I've taken so far. I not only learned python, but also computational thinking that expands the power of programming. As a non-cs major heading into a master's CS program, the exposure to this class gave me tremendous confidence in moving into the next level. the psets, coupled with exercises between lectures fortified my understanding of the materials seamlessly. I highly recommend this class to anyone interested in learning python, and programming in general."
+			},
+			{
+				"id": "review-2678",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed"],
+				"text": "I thought this course was HARD. Devoted many more hours to it than I anticipated and barely got above the passing mark. That said, I learned a lot and found it to be of higher quality than several undergraduate courses I took as an enrolled student at a respected university. I am not a programming type and my brain does not naturally take to this kind of material. If you have a thick skin and are interested in the topic, this is the course you want. Many of the concepts helped me substantially in understanding how to use other programs like R effectively."
+			},
+			{
+				"id": "review-7859",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["12 hours", "very hard"],
+				"text": "Okay, so for someone who has never coded, and wants to learn to program, you can safely assume this is the best course, yet the hardest out their. Even for someone who has programmed for a year or so, this course can be tough. So, if you are merely starting, don't feel belittled. This is a magnificent course, and even if you just complete it, without scoring good, trust me, you will take many things out of it for future. Will normally take around 12-15 hours a week, but if you are new might take long."
+			},
+			{
+				"id": "review-1396",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed"],
+				"text": "Prior experience: 1 year of computer science education.\n\nThis was my first MOOC, and up to this point, the most rewarding one. The way it approaches CS is the best I've seen so far, giving real examples of usage of all the concepts, it's really motivating.\n\nRegarding difficulty, it has the perfect balance: the challenges are demanding but not so hard that you feel frustrated or can't complete it.\n\nI totally recommend this one, but I advise you that if your only goal is to learn Python, maybe it is not the best choice, as you will use a lot of time on others subjects rather then just programming."
+			},
+			{
+				"id": "review-23339",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "6 hours", "medium"],
+				"text": "Really excellent one. Even without any prior exposure to the programming one can grasp all the fundamental ideas, presented in course, pretty easily. The other important characteristic is very active discussion forum, where it is possible to find support or get answers for a variety of questions. And, third, despite frequent claims to the contrary, automatic grader gets the job done - with a proper implementation throughout all the course I haven't managed to get any errors or incorrect behaviour from it."
+			},
+			{
+				"id": "review-8151",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed", "6 hours", "hard"],
+				"text": "An excellent introduction to thinking computationally. I liked the instructor, and the exercises and problems sets largely struck a nice balance, being challenging but not discouraging. The midterm and final, though, I found very difficult.\n\nThe pacing of the class is also a little uneven: we lingered over the easier topics early on, but then sped through more demanding topics, such as object-oriented programming, toward the end of the course."
+			},
+			{
+				"id": "review-11604",
+				"username": "Prose S",
+				"rating": "4.5",
+				"adjs": ["completed"],
+				"text": "I really enjoyed this course. Prof. Grimson's lectures were a pleasure to watch. I had very little programming experience (just Python for Informatics on Coursera), so I found this course to be difficult, but very rewarding. I took it concurrently with the Rice python course on Coursera, and I found that the two courses complemented each other very well, though it was hard to find time to complete all the assignments for both courses."
+			}
+		]
 	}
 }
