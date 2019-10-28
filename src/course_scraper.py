@@ -8,6 +8,8 @@ xpaths_text = {
     'categories': '//div[@class="text-2 margin-top-xsmall margin-bottom-small medium-up-margin-bottom-xxsmall"]',
     'syllabus': '//div[@data-expand-article-target="syllabus"]',
     'teachers': '//div[@class="text-1 margin-top-medium"]//div[@class="col width-100 text-2 medium-up-text-1"]',
+    'review_count': '//a[@class="text-4 text--charcoal hover-text--underline medium-up-text-3 padding-horz-xsmall"]',
+    'interested_count': '//strong[@class="text-4 medium-up-text-3 text--bold text--charcoal" and @data-format-number=""]',
 
 }
 
@@ -80,7 +82,7 @@ class CourseScraper:
             '//div[@class="shadow border-all border--xgray border--thin"]/ul/li')]
 
         course['details'] = parse_course_details(details)
-
+        course['review_count'] = course['review_count'].split(' ')[0]
         return course
 
 
