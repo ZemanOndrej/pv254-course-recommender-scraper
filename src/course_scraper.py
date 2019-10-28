@@ -50,7 +50,7 @@ class CourseScraper:
 
             parsed_reviews.append(review)
 
-        # print(parsed_reviews)
+        # only one page
         return parsed_reviews
 
     def scrapeCourse(self, subject):
@@ -79,9 +79,6 @@ class CourseScraper:
 
         course['details'] = parse_course_details(course['details'])
 
-        course['reviews'] = self.scrape_course_reviews()
-
-        print(course['name'])
         return course
 
 
