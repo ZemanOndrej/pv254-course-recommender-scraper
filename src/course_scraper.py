@@ -9,12 +9,14 @@ xpaths_text = {
     'syllabus': '//div[@data-expand-article-target="syllabus"]',
     'teachers': '//div[@class="text-1 margin-top-medium"]//div[@class="col width-100 text-2 medium-up-text-1"]',
     'review_count': '//a[@class="text-4 text--charcoal hover-text--underline medium-up-text-3 padding-horz-xsmall"]',
-    'interested_count': '//strong[@class="text-4 medium-up-text-3 text--bold text--charcoal" and @data-format-number=""]',
+    'interested_count': '//strong[@class="text-4 medium-up-text-3 text--bold text--charcoal"]',
 
 }
 
 xpaths_other = {
-    'link': '//a[@id="btnProviderCoursePage"]'
+    'link': '//a[@id="btnProviderCoursePage"]',
+    'rating': '//span[@class="review-rating hidden text--charcoal"]',
+    'details': '//div[@class="shadow border-all border--xgray border--thin"]/ul/li',
 }
 
 
@@ -67,7 +69,7 @@ class CourseScraper:
             self.driver, xpaths_other['link']).get_attribute('href')
 
         course['rating'] = safe_get_element_by_xpath(
-            self.driver, '//span[@class="review-rating hidden text--charcoal"]', 'rating').get_attribute('textContent').strip()
+            self.driver, xpaths_other['rating'], 'rating').get_attribute('textContent').strip()
 
         if course['teachers'] is not None:
             course['teachers'] = [x.strip()
@@ -79,7 +81,7 @@ class CourseScraper:
                                 for x in course['categories'].replace('Found in ', '').split(',')]
 
         details = [x.text for x in self.driver.find_elements_by_xpath(
-            '//div[@class="shadow border-all border--xgray border--thin"]/ul/li')]
+            xpaths_other['details'])]
 
         course['details'] = parse_course_details(details)
         course['review_count'] = course['review_count'].split(' ')[0]
