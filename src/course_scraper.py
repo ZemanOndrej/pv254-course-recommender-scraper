@@ -8,7 +8,6 @@ xpaths_text = {
     'categories': '//div[@class="text-2 margin-top-xsmall margin-bottom-small medium-up-margin-bottom-xxsmall"]',
     'syllabus': '//div[@data-expand-article-target="syllabus"]',
     'teachers': '//div[@class="text-1 margin-top-medium"]//div[@class="col width-100 text-2 medium-up-text-1"]',
-    'details': '//html/body/div[1]/div[1]/div[3]/div/div[2]/div[1]/div/ul',
 
 }
 
@@ -77,30 +76,27 @@ class CourseScraper:
         course['categories'] = [x.strip()
                                 for x in course['categories'].replace('Found in ', '').split(',')]
 
-        course['details'] = parse_course_details(course['details'])
+        details = [x.text for x in self.driver.find_elements_by_xpath(
+            '//div[@class="shadow border-all border--xgray border--thin"]/ul/li')]
+
+        course['details'] = parse_course_details(details)
 
         return course
 
 
 def parse_course_details(details):
     detail_data = {}
-    details_split = details.split('\n')
-    start = False
-    start_data = []
-    for i in range(len(details_split)):
-        if start:
-            if details_split[i] == 'DURATION':
-                start = False
-                detail_data[details_split[i]] = details_split[i+1]
-                break
-            else:
-                start_data.append(details_split[i])
-                continue
+    for x in details[:-1]:
+        det_split = x.split('\n')
+        if len(det_split) == 0:
+            continue
+        detail_name = det_split[0].lower()
 
-        if i % 2 == 0:
-            if details_split[i] == 'START DATE':
-                start = True
-                detail_data[details_split[i]] = start_data
-            else:
-                detail_data[details_split[i]] = details_split[i+1]
+        if len(det_split) == 1:
+            detail_data[detail_name] = None
+        elif len(det_split) == 2:
+            detail_data[detail_name] = det_split[1]
+        elif len(det_split) > 2:
+            detail_data[detail_name] = det_split[1:]
+
     return detail_data
