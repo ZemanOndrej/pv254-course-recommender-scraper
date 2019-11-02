@@ -1,22 +1,23 @@
 from util import safe_get_element_by_xpath
 import re
+from json import loads
 xpaths_text = {
     'overview': '//div[@data-expand-article-target="overview"]',
     'name': '//h1[@id="course-title"]',
-    'school': '//div[@class="classcentral-style"]//p//a[@class="text--charcoal hover-text--underline"]',
-    'provider': '//div[@class="classcentral-style"]//p//a[@class="text--charcoal text--italic hover-text--underline"]',
+    'school': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[1]',
+    'provider': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[2]',
     'categories': '//div[@class="text-2 margin-top-xsmall margin-bottom-small medium-up-margin-bottom-xxsmall"]',
     'syllabus': '//div[@data-expand-article-target="syllabus"]',
-    'teachers': '//div[@class="text-1 margin-top-medium"]//div[@class="col width-100 text-2 medium-up-text-1"]',
-    'review_count': '//a[@class="text-4 text--charcoal hover-text--underline medium-up-text-3 padding-horz-xsmall"]',
-    'interested_count': '//strong[@class="text-4 medium-up-text-3 text--bold text--charcoal"]',
+    'teachers': '//div[@class="text-1 margin-top-medium"]//div[@class="row"]//div[@class="col width-100 text-1"]',
+    # 'review_count': '//a[@class="text-4 text-charcoal hover-text-underline medium-up-text-3 padding-horz-xsmall"]',
+    'interested_count': '//div[@class="margin-top-small row nowrap vert-align-middle"]//strong[@class="text-3 weight-semi inline-block"]',
 
 }
 
 xpaths_other = {
     'link': '//a[@id="btnProviderCoursePage"]',
-    'rating': '//span[@class="review-rating hidden text--charcoal"]',
-    'details': '//div[@class="shadow border-all border--xgray border--thin"]/ul/li',
+    'rating': '//span[@class="review-rating hidden text-charcoal"]',
+    'details': '//div[@class="shadow-light radius-small border-all border-gray-light medium-down-margin-top-small"]/ul[@class="list-no-style"]/li',
 }
 
 
@@ -65,11 +66,18 @@ class CourseScraper:
             if course[x] is not None:
                 course[x] = course[x].text
 
+        scriptTag = safe_get_element_by_xpath(
+            self.driver, '/html/body/div[1]/div/script').get_attribute('innerHTML')
+        js = loads(scriptTag, strict=False)
+
+        course['description'] = js['description']
+        course['rating'] = js['aggregateRating']['ratingValue']
+        course['review_count'] = js['aggregateRating']['reviewCount']
         course['link'] = safe_get_element_by_xpath(
             self.driver, xpaths_other['link']).get_attribute('href')
 
-        course['rating'] = safe_get_element_by_xpath(
-            self.driver, xpaths_other['rating'], 'rating').get_attribute('textContent').strip()
+        # course['rating'] = safe_get_element_by_xpath(
+        #     self.driver, xpaths_other['rating'], 'rating').get_attribute('textContent').strip()
 
         if course['teachers'] is not None:
             course['teachers'] = [x.strip()
@@ -84,7 +92,7 @@ class CourseScraper:
             xpaths_other['details'])]
 
         course['details'] = parse_course_details(details)
-        course['review_count'] = course['review_count'].split(' ')[0]
+        # course['review_count'] = course['review_count'].split(' ')[0]
         return course
 
 

@@ -8,7 +8,7 @@ def saveJson(json_output, filename='courses.json'):
     file_dir = Path(filename).parent.absolute()
     if not os.path.exists(file_dir):
         os.makedirs(file_dir)
-    with open(filename, 'w', encoding="utf-8") as f:
+    with open(filename, 'w+', encoding="utf-8") as f:
         json.dump(json_output, f)
 
 
