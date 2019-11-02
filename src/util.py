@@ -1,7 +1,6 @@
 import os
 import json
 from pathlib import Path
-from selenium.common.exceptions import NoSuchElementException
 
 
 def saveJson(json_output, filename='courses.json'):
@@ -22,9 +21,4 @@ def get_course_id(url):
     return course_url[len(course_url)-1]
 
 
-def safe_get_element_by_xpath(driver, xpath, atrName=''):
-    try:
-        return driver.find_element_by_xpath(xpath)
-    except NoSuchElementException:
-        print(f'no atribute({atrName})')
-        return None
+

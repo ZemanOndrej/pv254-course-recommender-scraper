@@ -1,11 +1,12 @@
-from util import safe_get_element_by_xpath
 import re
 from json import loads
+from selenium.common.exceptions import NoSuchElementException
+
 xpaths_text = {
     'overview': '//div[@data-expand-article-target="overview"]',
     'name': '//h1[@id="course-title"]',
-    'school': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[1]',
-    'provider': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[2]',
+    'school': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[@class="color-charcoal hover-text-underline" ]',
+    'provider': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[@class="color-charcoal italic hover-text-underline" and @data-track-click="course_click"]',
     'categories': '//div[@class="text-2 margin-top-xsmall margin-bottom-small medium-up-margin-bottom-xxsmall"]',
     'syllabus': '//div[@data-expand-article-target="syllabus"]',
     'teachers': '//div[@class="text-1 margin-top-medium"]//div[@class="row"]//div[@class="col width-100 text-1"]',
@@ -18,6 +19,11 @@ xpaths_other = {
     'link': '//a[@id="btnProviderCoursePage"]',
     'rating': '//span[@class="review-rating hidden text-charcoal"]',
     'details': '//div[@class="shadow-light radius-small border-all border-gray-light medium-down-margin-top-small"]/ul[@class="list-no-style"]/li',
+}
+
+
+missing_atrs = {
+
 }
 
 
@@ -57,27 +63,26 @@ class CourseScraper:
         # only one page
         return parsed_reviews
 
-    def scrapeCourse(self, subject):
+    def scrapeCourse(self, subject, id):
         course = {}
+        self.id = id
         course['subject'] = subject
+        course['id'] = id
         for x in xpaths_text:
-            course[x] = safe_get_element_by_xpath(
-                self.driver, xpaths_text[x], atrName=x)
+            course[x] = self.safe_get_element_by_xpath(
+                xpaths_text[x], atrName=x)
             if course[x] is not None:
                 course[x] = course[x].text
 
-        scriptTag = safe_get_element_by_xpath(
-            self.driver, '/html/body/div[1]/div/script').get_attribute('innerHTML')
+        scriptTag = self.safe_get_element_by_xpath(
+            '/html/body/div[1]/div/script').get_attribute('innerHTML')
         js = loads(scriptTag, strict=False)
 
         course['description'] = js['description']
         course['rating'] = js['aggregateRating']['ratingValue']
         course['review_count'] = js['aggregateRating']['reviewCount']
-        course['link'] = safe_get_element_by_xpath(
-            self.driver, xpaths_other['link']).get_attribute('href')
-
-        # course['rating'] = safe_get_element_by_xpath(
-        #     self.driver, xpaths_other['rating'], 'rating').get_attribute('textContent').strip()
+        course['link'] = self.safe_get_element_by_xpath(
+            xpaths_other['link']).get_attribute('href')
 
         if course['teachers'] is not None:
             course['teachers'] = [x.strip()
@@ -92,8 +97,18 @@ class CourseScraper:
             xpaths_other['details'])]
 
         course['details'] = parse_course_details(details)
-        # course['review_count'] = course['review_count'].split(' ')[0]
         return course
+
+    def safe_get_element_by_xpath(self, xpath, atrName=''):
+        try:
+            return driver.find_element_by_xpath(xpath)
+        except NoSuchElementException:
+            print(f'no atribute({atrName})')
+            if atrName in missing_atrs:
+                missing_atrs[atrName].append(self.id)
+            else:
+                missing_atrs[atrName] = []
+            return None
 
 
 def parse_course_details(details):
