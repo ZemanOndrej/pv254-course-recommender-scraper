@@ -5,20 +5,20 @@ from selenium.common.exceptions import NoSuchElementException
 xpaths_text = {
     'overview': '//div[@data-expand-article-target="overview"]',
     'name': '//h1[@id="course-title"]',
-    'school': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[@class="color-charcoal hover-text-underline" ]',
     'provider': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[@class="color-charcoal italic hover-text-underline" and @data-track-click="course_click"]',
     'categories': '//div[@class="text-2 margin-top-xsmall margin-bottom-small medium-up-margin-bottom-xxsmall"]',
     'syllabus': '//div[@data-expand-article-target="syllabus"]',
     'teachers': '//div[@class="text-1 margin-top-medium"]//div[@class="row"]//div[@class="col width-100 text-1"]',
     # 'review_count': '//a[@class="text-4 text-charcoal hover-text-underline medium-up-text-3 padding-horz-xsmall"]',
-    'interested_count': '//div[@class="margin-top-small row nowrap vert-align-middle"]//strong[@class="text-3 weight-semi inline-block"]',
+    'interested_count': '//div[@class="margin-top-small row nowrap vert-align-middle"]//strong[@class="text-3 weight-semi inline-block"]'
 
 }
 
 xpaths_other = {
+    'school': '//p[@class="text-1 block large-up-inline-block z-high relative"]/a[@class="color-charcoal hover-text-underline" ]',
     'link': '//a[@id="btnProviderCoursePage"]',
     'rating': '//span[@class="review-rating hidden text-charcoal"]',
-    'details': '//div[@class="shadow-light radius-small border-all border-gray-light medium-down-margin-top-small"]/ul[@class="list-no-style"]/li',
+    'details': '//div[@class="shadow-light radius-small border-all border-gray-light medium-down-margin-top-small"]/ul[@class="list-no-style"]/li'
 }
 
 
@@ -91,6 +91,11 @@ class CourseScraper:
         course['categories'] = [x.strip()
                                 for x in course['categories'].replace('Found in ', '').split(',')]
 
+
+        course['schools']= [x.text for x in self.safe_get_elements_by_xpath(xpaths_other['school'])]
+
+
+
         details = [x.text for x in self.driver.find_elements_by_xpath(
             xpaths_other['details'])]
 
@@ -100,6 +105,17 @@ class CourseScraper:
     def safe_get_element_by_xpath(self, xpath, atrName=''):
         try:
             return self.driver.find_element_by_xpath(xpath)
+        except NoSuchElementException:
+            print(f'no atribute({atrName})',flush=True)
+            if atrName in missing_atrs:
+                missing_atrs[atrName].append(self.id)
+            else:
+                missing_atrs[atrName] = []
+            return None
+
+    def safe_get_elements_by_xpath(self, xpath, atrName=''):
+        try:
+            return self.driver.find_elements_by_xpath(xpath)
         except NoSuchElementException:
             print(f'no atribute({atrName})',flush=True)
             if atrName in missing_atrs:

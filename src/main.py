@@ -13,9 +13,9 @@ from course_scraper import CourseScraper, missing_atrs
 from util import get_course_id, get_subject_urls, saveJson
 from course_url_scraper import CourseUrlsScraper
 
-done_subjects = ['cs']
-all_subjects = ['maths', 'business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
-                'art-and-design', 'health', 'engineering', 'social-sciences', 'science', 'education', ]
+done_subjects = ['cs','maths']
+all_subjects = [ 'science','health' ,'business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
+                'art-and-design', 'engineering', 'social-sciences', 'education' ]
 
 impl_wait = 2
 
@@ -56,7 +56,7 @@ def save_missing_attrs():
 
 
 def scrape_data(subs=None):
-    subs = ['maths'] if subs is None else subs
+    subs = ['health','science'] if subs is None else subs
     options = Options()
     options.add_argument("--headless")
     driver = setup(options)
@@ -91,7 +91,7 @@ def main(subs=None):
 def parse_params():
     args = sys.argv
     if len(args) <= 1:
-        print('running scraper on maths', flush=True)
+        print('running scraper on default subject', flush=True)
         return None
     elif args[1] == 'help':
         print('--subjects (list all subjects); --all (run scraper with all subjects); maths cs ... to run specified courses')
