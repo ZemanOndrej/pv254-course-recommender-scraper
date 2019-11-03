@@ -13,14 +13,16 @@ from course_scraper import CourseScraper, missing_atrs
 from util import get_course_id, get_subject_urls, saveJson
 from course_url_scraper import CourseUrlsScraper
 
-all_subjects = ['cs', 'business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
+done_subjects = ['cs']
+all_subjects = ['business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
                 'art-and-design', 'maths', 'health', 'engineering', 'social-sciences', 'science', 'education', ]
 
+impl_wait = 2
 
 def setup(opts=None):
     logging.basicConfig(filename='scraper.log', level=logging.DEBUG)
     driver = webdriver.Firefox(options=opts)
-    driver.implicitly_wait(5)
+    driver.implicitly_wait(impl_wait)
     return driver
 
 
@@ -32,8 +34,21 @@ def scrape_urls(subs):
 
 
 def save_missing_attrs():
-    with open('missing_atrs.json', 'w+') as f:
-        f.write(json.dumps(missing_atrs))
+    obj = {}
+    with open('missing_atrs.json', 'r') as f:
+        obj = json.loads(f.read())
+
+    for key in obj:
+        obj[key] = set(obj[key])
+
+    for atr in missing_atrs:
+        if atr not in obj:
+            obj[atr] = missing_atrs[atr]
+        else:
+            obj[atr].update(missing_atrs[atr])
+
+    with open('missing_atrs.json', 'w') as f:
+        f.write(json.dumps(obj))
 
 
 def scrape_data(subs=None):

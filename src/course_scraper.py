@@ -22,9 +22,7 @@ xpaths_other = {
 }
 
 
-missing_atrs = {
-
-}
+missing_atrs = {}
 
 
 class CourseScraper:
@@ -101,7 +99,7 @@ class CourseScraper:
 
     def safe_get_element_by_xpath(self, xpath, atrName=''):
         try:
-            return driver.find_element_by_xpath(xpath)
+            return self.driver.find_element_by_xpath(xpath)
         except NoSuchElementException:
             print(f'no atribute({atrName})')
             if atrName in missing_atrs:
