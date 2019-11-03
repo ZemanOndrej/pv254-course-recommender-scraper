@@ -101,7 +101,7 @@ class CourseScraper:
         try:
             return self.driver.find_element_by_xpath(xpath)
         except NoSuchElementException:
-            print(f'no atribute({atrName})')
+            print(f'no atribute({atrName})',flush=True)
             if atrName in missing_atrs:
                 missing_atrs[atrName].append(self.id)
             else:

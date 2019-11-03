@@ -14,10 +14,11 @@ from util import get_course_id, get_subject_urls, saveJson
 from course_url_scraper import CourseUrlsScraper
 
 done_subjects = ['cs']
-all_subjects = ['business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
-                'art-and-design', 'maths', 'health', 'engineering', 'social-sciences', 'science', 'education', ]
+all_subjects = ['maths', 'business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
+                'art-and-design', 'health', 'engineering', 'social-sciences', 'science', 'education', ]
 
 impl_wait = 2
+
 
 def setup(opts=None):
     logging.basicConfig(filename='scraper.log', level=logging.DEBUG)
@@ -47,6 +48,9 @@ def save_missing_attrs():
         else:
             obj[atr].update(missing_atrs[atr])
 
+    for key in obj:
+        obj[key] = list(obj[key])
+
     with open('missing_atrs.json', 'w') as f:
         f.write(json.dumps(obj))
 
@@ -59,7 +63,7 @@ def scrape_data(subs=None):
     output = {}
 
     for sub in subs:
-        print(f'starting subject {sub}')
+        print(f'starting subject {sub}', flush=True)
         arr = get_subject_urls(sub)
         cs = CourseScraper(driver)
         for i, url in enumerate(arr):
@@ -68,11 +72,11 @@ def scrape_data(subs=None):
             try:
                 output[course_id] = cs.scrapeCourse(sub, id=course_id)
             except Exception as e:
-                print(e)
+                print(e, flush=True)
                 logging.error(e)
                 save_missing_attrs()
                 driver.quit()
-            print(f'courseid={course_id} --- {i}/{len(arr)}')
+            print(f'courseid={course_id} --- {i}/{len(arr)}', flush=True)
             logging.info(f'courseid={course_id} --- {i}/{len(arr)}')
 
         saveJson(output, f'./courses/data/{sub}_courses.json')
@@ -87,7 +91,7 @@ def main(subs=None):
 def parse_params():
     args = sys.argv
     if len(args) <= 1:
-        print('running scraper on maths')
+        print('running scraper on maths', flush=True)
         return None
     elif args[1] == 'help':
         print('--subjects (list all subjects); --all (run scraper with all subjects); maths cs ... to run specified courses')
@@ -96,10 +100,11 @@ def parse_params():
         print(all_subjects)
         exit()
     elif args[1] == '--all':
-        print('running scraper with all subjects')
+        print('running scraper with all subjects', flush=True)
         return all_subjects
     elif all(x in all_subjects for x in args[1:]):
-        print('running scraper with these subjects' + repr(args[1:]))
+        print('running scraper with these subjects' +
+              repr(args[1:]), flush=True)
         return args[1:]
     else:
         print('wrong command')
