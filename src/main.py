@@ -2,6 +2,7 @@ import logging
 import re
 import sys
 import json
+import os
 
 import pandas as pd
 from bs4 import BeautifulSoup
@@ -13,11 +14,14 @@ from course_scraper import CourseScraper, missing_atrs
 from util import get_course_id, get_subject_urls, saveJson
 from course_url_scraper import CourseUrlsScraper
 
-done_subjects = ['cs','maths']
-all_subjects = [ 'science','health' ,'business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
-                'art-and-design', 'engineering', 'social-sciences', 'education' ]
+done_subjects = ['engineering',
+                  'health', 'science']
+all_subjects = ['cs', 'maths', 'science', 'health', 'business', 'humanities', 'data-science', 'personal-development', 'programming-and-software-development',
+                'art-and-design', 'engineering', 'social-sciences', 'education']
 
 impl_wait = 2
+last_sub = None
+last_course_id = None
 
 
 def setup(opts=None):
@@ -56,7 +60,8 @@ def save_missing_attrs():
 
 
 def scrape_data(subs=None):
-    subs = ['health','science'] if subs is None else subs
+    subs = [
+        'education'] if subs is None else subs
     options = Options()
     options.add_argument("--headless")
     driver = setup(options)
@@ -102,6 +107,12 @@ def parse_params():
     elif args[1] == '--all':
         print('running scraper with all subjects', flush=True)
         return all_subjects
+    elif args[1] == '--not-done':
+        files = []
+        for r, d, f in os.walk('./courses/data'):
+            files = f
+        subs = [x.split('_')[0] for x in files]
+        return [x for x in all_subjects if x not in subs]
     elif all(x in all_subjects for x in args[1:]):
         print('running scraper with these subjects' +
               repr(args[1:]), flush=True)
