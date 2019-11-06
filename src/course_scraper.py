@@ -25,6 +25,21 @@ xpaths_other = {
 missing_atrs = {}
 
 
+def fix_JSON(json_message=None):
+    result = None
+    try:
+        result = loads(json_message, strict=False)
+    except Exception as e:
+        # Find the offending character index:
+        idx_to_replace = int(str(e).split(' ')[-1].replace(')', ''))
+        # Remove the offending character:
+        json_message = list(json_message)
+        json_message[idx_to_replace] = ' '
+        new_message = ''.join(json_message)
+        return fix_JSON(json_message=new_message)
+    return result
+
+
 class CourseScraper:
     def __init__(self, driver):
         self.driver = driver
@@ -74,7 +89,7 @@ class CourseScraper:
 
         scriptTag = self.safe_get_element_by_xpath(
             '/html/body/div[1]/div/script').get_attribute('innerHTML')
-        js = loads(scriptTag, strict=False)
+        js = fix_JSON(scriptTag)
 
         course['description'] = js['description']
         course['rating'] = js['aggregateRating']['ratingValue']
@@ -91,10 +106,8 @@ class CourseScraper:
         course['categories'] = [x.strip()
                                 for x in course['categories'].replace('Found in ', '').split(',')]
 
-
-        course['schools']= [x.text for x in self.safe_get_elements_by_xpath(xpaths_other['school'])]
-
-
+        course['schools'] = [
+            x.text for x in self.safe_get_elements_by_xpath(xpaths_other['school'])]
 
         details = [x.text for x in self.driver.find_elements_by_xpath(
             xpaths_other['details'])]
@@ -106,7 +119,7 @@ class CourseScraper:
         try:
             return self.driver.find_element_by_xpath(xpath)
         except NoSuchElementException:
-            print(f'no atribute({atrName})',flush=True)
+            print(f'no atribute({atrName})', flush=True)
             if atrName in missing_atrs:
                 missing_atrs[atrName].append(self.id)
             else:
@@ -117,7 +130,7 @@ class CourseScraper:
         try:
             return self.driver.find_elements_by_xpath(xpath)
         except NoSuchElementException:
-            print(f'no atribute({atrName})',flush=True)
+            print(f'no atribute({atrName})', flush=True)
             if atrName in missing_atrs:
                 missing_atrs[atrName].append(self.id)
             else:
